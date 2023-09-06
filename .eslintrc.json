@@ -1,12 +1,12 @@
 {
-  "root": true,
   "env": {
     "browser": true,
-    "es2020": true
+    "es2020": true,
+    "node": true
   },
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": true,
-    "tsconfigRootDir": "__dirname"
+    "project": ["./tsconfig.json", "./tsconfig.node.json"]
   },
   "extends": [
     "plugin:@typescript-eslint/recommended-type-checked",
@@ -22,17 +22,16 @@
     "react": {
       "version": "detect"
     },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx", ".js", ".jsx"]
+    },
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       },
       "typescript": {
-        "project": "./tsconfig.json"
-      }
-    },
-    "import/alias": {
-      "alias": {
-        "@": "./src"
+        "project": "./tsconfig.json",
+        "alwaysTryTypes": true
       }
     }
   },
@@ -90,7 +89,18 @@
     ],
     "no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "warn",
-    "import/namespace": "off"
+    "import/namespace": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "array-element-newline": ["error", "consistent"]
   },
   "globals": {
     "NodeJS": true,
