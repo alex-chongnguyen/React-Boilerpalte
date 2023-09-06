@@ -1,0 +1,116 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended",
+    "eslint-config-prettier"
+  ],
+  "plugins": [
+    "prettier",
+    "import",
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      },
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    },
+    "import/alias": {
+      "alias": {
+        "@": "./src"
+      }
+    }
+  },
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          [
+            "builtin",
+            "external"
+          ],
+          "internal",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "react"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/named": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-no-target-blank": "warn",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "prettier/prettier": [
+      "warn",
+      {
+        "semi": true,
+        "endOfLine": "auto",
+        "tabWidth": 2,
+        "useTabs": false,
+        "singleQuote": true,
+        "printWidth": 100,
+        "jsxSingleQuote": false,
+        "singleAttributePerLine": true,
+        "noImplicitAny": false
+      }
+    ],
+    "@typescript-eslint/no-empty-function": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "object-curly-newline": [
+      "error",
+      {
+        "consistent": true
+      }
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "import/namespace": "off"
+  },
+  "globals": {
+    "NodeJS": true,
+    "JSX": true
+  }
+}
