@@ -1,10 +1,15 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es2020": true
   },
+  "parserOptions": {
+    "project": true,
+    "tsconfigRootDir": "__dirname"
+  },
   "extends": [
-    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-type-checked",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
@@ -12,23 +17,14 @@
     "plugin:jsx-a11y/recommended",
     "eslint-config-prettier"
   ],
-  "plugins": [
-    "prettier",
-    "import",
-    "@typescript-eslint"
-  ],
+  "plugins": ["prettier", "import", "@typescript-eslint"],
   "settings": {
     "react": {
       "version": "detect"
     },
     "import/resolver": {
       "node": {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       },
       "typescript": {
         "project": "./tsconfig.json"
@@ -44,18 +40,7 @@
     "import/order": [
       "error",
       {
-        "groups": [
-          [
-            "builtin",
-            "external"
-          ],
-          "internal",
-          [
-            "parent",
-            "sibling",
-            "index"
-          ]
-        ],
+        "groups": [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
         "pathGroups": [
           {
             "pattern": "react",
@@ -63,9 +48,7 @@
             "position": "before"
           }
         ],
-        "pathGroupsExcludedImportTypes": [
-          "react"
-        ],
+        "pathGroupsExcludedImportTypes": ["react"],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc",
