@@ -6,7 +6,8 @@
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": ["./tsconfig.json", "./tsconfig.node.json"]
+    "project": ["./tsconfig.json", "./tsconfig.node.json"],
+    "sourceType": "module"
   },
   "extends": [
     "plugin:@typescript-eslint/recommended-type-checked",
@@ -15,9 +16,10 @@
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
-    "eslint-config-prettier"
+    "eslint-config-prettier",
+    "plugin:prettier/recommended"
   ],
-  "plugins": ["prettier", "import", "@typescript-eslint"],
+  "plugins": ["import", "@typescript-eslint", "prettier"],
   "settings": {
     "react": {
       "version": "detect"
@@ -63,20 +65,6 @@
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off",
     "react-hooks/exhaustive-deps": "off",
-    "prettier/prettier": [
-      "warn",
-      {
-        "semi": true,
-        "endOfLine": "auto",
-        "tabWidth": 2,
-        "useTabs": false,
-        "singleQuote": true,
-        "printWidth": 100,
-        "jsxSingleQuote": false,
-        "singleAttributePerLine": true,
-        "noImplicitAny": false
-      }
-    ],
     "@typescript-eslint/no-empty-function": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
