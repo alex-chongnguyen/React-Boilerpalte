@@ -1,3 +1,9 @@
+import { useTranslation } from 'react-i18next';
+
+import { ELanguageResources } from '@/i18n';
+
 export function Home() {
-  return <div>Home</div>;
+  const { t } = useTranslation(ELanguageResources.common);
+
+  return <div>{t('home')}</div>;
 }

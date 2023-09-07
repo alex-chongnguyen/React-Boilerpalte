@@ -2,9 +2,11 @@ import { Suspense } from 'react';
 
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
+import { I18nextProvider } from 'react-i18next';
 import { ToastContainer } from 'react-toastify';
 
 import { Spinner } from '@/components';
+import i18n from '@/i18n';
 import { MyRouterProvider } from '@/providers/router.provider';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -37,8 +39,10 @@ export const AppProvider = () => {
     >
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <HelmetProvider>
-          <ToastContainer />
-          <MyRouterProvider />
+          <I18nextProvider i18n={i18n}>
+            <ToastContainer />
+            <MyRouterProvider />
+          </I18nextProvider>
         </HelmetProvider>
       </ErrorBoundary>
     </Suspense>

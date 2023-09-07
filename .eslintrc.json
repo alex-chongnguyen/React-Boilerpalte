@@ -88,7 +88,8 @@
         "tsx": "never"
       }
     ],
-    "array-element-newline": ["error", "consistent"]
+    "array-element-newline": ["error", "consistent"],
+    "@typescript-eslint/no-floating-promises": "off"
   },
   "globals": {
     "NodeJS": true,
