@@ -1,4 +1,3 @@
-import './App.css';
 import { AppProvider } from '@/providers';
 
 function App() {
