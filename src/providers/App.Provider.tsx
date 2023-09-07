@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 
+import { QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { I18nextProvider } from 'react-i18next';
@@ -7,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 
 import { Spinner } from '@/components';
 import i18n from '@/i18n';
+import { queryClient } from '@/libs';
 import { MyRouterProvider, ThemeProvider } from '@/providers';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,12 +24,14 @@ export const AppProvider = () => {
     >
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <HelmetProvider>
-          <I18nextProvider i18n={i18n}>
-            <ThemeProvider>
-              <ToastContainer />
-              <MyRouterProvider />
-            </ThemeProvider>
-          </I18nextProvider>
+          <QueryClientProvider client={queryClient}>
+            <I18nextProvider i18n={i18n}>
+              <ThemeProvider>
+                <ToastContainer />
+                <MyRouterProvider />
+              </ThemeProvider>
+            </I18nextProvider>
+          </QueryClientProvider>
         </HelmetProvider>
       </ErrorBoundary>
     </Suspense>
