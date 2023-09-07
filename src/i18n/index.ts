@@ -7,14 +7,14 @@ import { enResource } from '@/i18n/en';
 
 export const enum ELanguageResources {
   common = 'common',
+  login = 'login',
+  toastNoti = 'toastNoti',
 }
 
 const resources = {
   en: enResource,
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 i18n
   .use(Backend)
   .use(LanguageDetector)

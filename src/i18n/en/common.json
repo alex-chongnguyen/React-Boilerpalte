@@ -1,5 +1,8 @@
 {
   "login": "Login",
   "logout": "Logout",
-  "home": "Home Page"
+  "home": "Home Page",
+  "or": "Or",
+  "emailAddress": "E-Mail Address",
+  "password": "Password"
 }
