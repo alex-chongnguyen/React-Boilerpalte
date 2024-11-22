@@ -78,16 +78,6 @@
     "no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "warn",
     "import/namespace": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
     "array-element-newline": ["error", "consistent"],
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/no-unsafe-call": "off",

@@ -1,1 +1,1 @@
-export * from './statusCode.constants';
+export * from './status-code.ts'

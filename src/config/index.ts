@@ -1,1 +1,2 @@
-export * from './router.config';
+export * from './app-routers.ts'
+export * from './api-routers.ts'

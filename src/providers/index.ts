@@ -1,3 +1,3 @@
-export * from './App.Provider';
-export * from './Router.Provider';
-export * from './Theme.Provider';
+export * from './app.provider.tsx'
+export * from './router.provider'
+export * from './theme.provider.tsx'

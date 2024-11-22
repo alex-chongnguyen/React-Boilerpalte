@@ -1,5 +1,5 @@
 {
-  "semi": true,
+  "semi": false,
   "endOfLine": "auto",
   "tabWidth": 2,
   "useTabs": false,
